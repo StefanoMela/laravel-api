@@ -3,7 +3,7 @@
 @section('content')
 <section class="container mt-5">
   <h1>{{ $title }}</h1>
-  <h5>Fai log in per modificare i progetti</h5>
+  <h5>Fai il <a href="{{route('login')}}">log-in</a> per modificare i progetti</h5>
   <section class="container my-5">
     <h1 class="text-center">{{ $title }}</h1>
     @foreach ($projects as $project)
