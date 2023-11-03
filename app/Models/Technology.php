@@ -10,7 +10,7 @@ class Technology extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
+    protected $hidden = ['pivot'];
 
     public function projects()
     {
