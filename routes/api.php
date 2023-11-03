@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('/projects', ProjectController::class)->only('index','show');
+Route::apiResource('projects', ProjectController::class)->only('index','show');
