@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
 
 class Project extends Model
 {
@@ -43,5 +44,11 @@ class Project extends Model
             $html.= $technology ? "<span class='badge rounded-pill mx-1' style='background-color:{$technology->color}'>{$technology->label}</span>" : "Uncategorized";
         }
         return $html;
+    }
+
+
+    public function getAbsImageUri()
+    {
+        return $this->image ? Storage::url($this->image) : null;
     }
 }

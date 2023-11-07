@@ -34,6 +34,8 @@ class ProjectController extends Controller
         ->where('slug', $slug)
         ->with('type:id,label,color', 'technologies:id,label,color')
         ->first();
+
+        $project->image = $project->getAbsImageUri();
         
         return response()->json($project);
     }
