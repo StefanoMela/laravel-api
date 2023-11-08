@@ -13,14 +13,20 @@ class FormMessage extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $name;
+    public $email;
+    public $message;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($name, $email, $message)
     {
-        //
+        $this->name = $name;
+        $this->email = $email;
+        $this->message = $message;
     }
 
     /**
@@ -44,6 +50,11 @@ class FormMessage extends Mailable
     {
         return new Content(
             markdown: 'mail.form_message',
+            with: [
+                'name'=> $this->name,
+                'email'=> $this->email,
+                'message'=> $this->message
+            ]
         );
     }
 

@@ -15,9 +15,9 @@ class MessageFormController extends Controller
 
         $data = $request->all();
 
-        $name = $data["name"];
-        $email = $data["email"];
-        $message = $data["message"];
+        $name = $data['name'];
+        $email = $data['email'];
+        $message = $data['message'];
 
         $destinatario = User::find(1);
 

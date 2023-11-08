@@ -1,7 +1,9 @@
 <x-mail::message>
-# Nuovo messaggio dal Front Office
-<x-mail::button :url="''">
-Button Text
+# Nuovo messaggio di {{$name}} dal Front Office
+
+> {{$message}}
+<x-mail::button :url="'mailto:' . $email">
+Rispondi
 </x-mail::button>
 
 Thanks,<br>
